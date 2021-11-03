@@ -1,0 +1,19 @@
+{
+  "name": "songquizforhy",
+  "version": "1.0.0",
+  "description": "호영이를 위한 스타크래프트 노래맞추기 웹 심심 개발",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gun2jang/songQuizForHY.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gun2jang/songQuizForHY/issues"
+  },
+  "homepage": "https://github.com/gun2jang/songQuizForHY#readme"
+}
