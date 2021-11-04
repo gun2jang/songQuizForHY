@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const session = require('express-session');
 const MySQLStore = require('express-mysql-session')(session);
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+const bodyParser = require('body-parser');
+// const passport = require('passport');
+// const LocalStrategy = require('passport-local').Strategy;
 
 const storeKey = {
     host: "localhost",
@@ -23,23 +24,24 @@ router.use(
     })
 );
 
-
-// passport init and session
-router.use(passport.initialize());
-router.use(passport.session());
-
-passport.serializeUser(function(user, done){
-    done(null, user.id);
-});
-
-passport.deserializeUser(function(id, done){
-    done(null, id);
-});
+router.use(bodyParser.urlencoded({extended: false}));
 
 
 
-router.post('/signin', (req, res) => {
-    
+router.post('/login', (req, res) => {
+    req.session.username = req.body.id;
+    res.redirect('/lobby');
+})
+
+router.post('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if(err) {
+            res.render('/errorpage');
+        }
+        
+    });
+    res.redirect('/');
+
 })
 
 
