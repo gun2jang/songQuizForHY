@@ -15,9 +15,10 @@ app.use('/auth', auth);
 const lobby = require('./routes/lobby');
 app.use('/lobby', lobby);
 
-let number = 1;
+
+let roomNumber =  1;
 const rooms = require('./routers/rooms');
-app.use(`/room${number}`, rooms);
+app.use(`/room${roomNumber}`, rooms);
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/firstPage.html');
