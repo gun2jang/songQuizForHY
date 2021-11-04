@@ -1,12 +1,10 @@
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
-const { Server } = require("socket.io");
 const port = 3000;
 
 const app = express();
 const server = http.createServer(app);
-const io = new Server(server);
 
 // route
 const auth = require('./routers/auth');
