@@ -23,7 +23,8 @@ app.get('/', (req, res) => {
 });
 
 
-  
+app.use('/account', require('./routers/account'))
+
 server.listen(port, () => {
     console.log(`Socket.IO server running at http://localhost:${port}/`);
 });
